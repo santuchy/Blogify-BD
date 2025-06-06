@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="max-w-11/12 mx-auto py-2">
             <div className="hero min-h-[27rem] md:min-h-[32rem] flex flex-col-reverse lg:flex-row-reverse lg:gap-12 items-center">
                 
-                <div className="w-full lg:w-1/2 text-center lg:text-left mt-6 lg:mt-0">
+                <div className="lg:w-1/2 text-center lg:text-left mt-6 lg:mt-0">
                     <motion.h1
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
