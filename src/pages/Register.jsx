@@ -24,12 +24,14 @@ const Register = () => {
         } else if (!/[A-Z]/.test(password)) {
             setError("Password must contain an uppercase letter.");
             return;
-        } else if (!/[a-z]/.test(password)) {
-            setError("Password must contain a lowercase letter.");
+        } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            setError("Password must contain a special character.");
+            return;
+        } else if (!/[0-9]/.test(password)) {
+            setError("Password must contain a numeric character.");
             return;
         } else {
             setError("");
-            // Submit logic (navigate or API call)
             console.log("Password is valid!");
         }
 

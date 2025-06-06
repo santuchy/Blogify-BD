@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from './../context/AuthProvider';
+import userIcon from '../assets/icons8-user-100.png';
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
+
+     const { user, logOut } = use(AuthContext);
+
+    const handleLogOut = () => {
+        logOut().then(() => {
+            alert("You logged out successfully...");
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
     return (
         <div>
             <div className="navbar max-w-11/12 mx-auto bg-base-100 shadow-sm">
@@ -41,8 +54,31 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={'/auth/login'}><div className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Login</button></div></Link>
-                    <Link to={'/auth/register'}><div className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Register</button></div></Link>
+                    {user ? (
+                    <button onClick={handleLogOut} type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Logout</button>
+                ) : (
+                    <>
+                        <Link className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Login</button></Link>
+                        <Link className='text-lg text-[#F8F4E1]' to='/auth/register'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Register</button></Link>
+                    </>
+                )}
+
+                {user && (
+                    <>
+                        <img
+                            className="w-[40px] h-[40px] rounded-full bg-white border border-gray-300"
+                            src={user.photoURL || userIcon}
+                            alt="User"
+                            data-tooltip-id="user-tooltip"
+                            data-tooltip-content={user.displayName || 'User'}
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = userIcon;
+                            }}
+                        />
+                        <Tooltip id="user-tooltip" place="bottom" style={{ fontSize: '0.875rem', zIndex: 9999 }} />
+                    </>
+                )}
                 </div>
             </div>
         </div>
