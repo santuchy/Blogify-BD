@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
 
-     const { user, logOut } = use(AuthContext);
+    const { user, logOut } = use(AuthContext);
 
     const handleLogOut = () => {
         logOut().then(() => {
@@ -17,7 +17,8 @@ const Navbar = () => {
     };
     return (
         <div>
-            <div className="navbar max-w-11/12 mx-auto bg-base-100 shadow-sm">
+            <div className="navbar rounded-b-[30px]
+ max-w-11/12 mx-auto shadow-sm">
 
                 <div className="navbar-start ">
                     <div className="dropdown ">
@@ -36,9 +37,10 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <Link to={'/'}><li><a>Home</a></li></Link>
+                            
                             <li><a>All Blog</a></li>
                             <li><a>Featured Blogs</a></li>
-                            <li><a>Add Blogs</a></li>
+                            <Link to={'/addblog'}><li><a>Add Blogs</a></li></Link>
                             <li><a>Wishlist</a></li>
                         </ul>
                     </div>
@@ -49,36 +51,36 @@ const Navbar = () => {
                         <Link to={'/'}><li><a>Home</a></li></Link>
                         <li><a>All Blog</a></li>
                         <li><a>Featured Blogs</a></li>
-                        <li><a>Add Blogs</a></li>
+                        <Link to={'/addblog'}><li><a>Add Blogs</a></li></Link>
                         <li><a>Wishlist</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {user ? (
-                    <button onClick={handleLogOut} type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Logout</button>
-                ) : (
-                    <>
-                        <Link className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Login</button></Link>
-                        <Link className='text-lg text-[#F8F4E1]' to='/auth/register'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Register</button></Link>
-                    </>
-                )}
+                        <button onClick={handleLogOut} type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Logout</button>
+                    ) : (
+                        <>
+                            <Link className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Login</button></Link>
+                            <Link className='text-lg text-[#F8F4E1]' to='/auth/register'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Register</button></Link>
+                        </>
+                    )}
 
-                {user && (
-                    <>
-                        <img
-                            className="w-[40px] h-[40px] rounded-full bg-white border border-gray-300"
-                            src={user.photoURL || userIcon}
-                            alt="User"
-                            data-tooltip-id="user-tooltip"
-                            data-tooltip-content={user.displayName || 'User'}
-                            onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.src = userIcon;
-                            }}
-                        />
-                        <Tooltip id="user-tooltip" place="bottom" style={{ fontSize: '0.875rem', zIndex: 9999 }} />
-                    </>
-                )}
+                    {user && (
+                        <>
+                            <img
+                                className="w-[40px] h-[40px] rounded-full bg-white border border-gray-300"
+                                src={user.photoURL || userIcon}
+                                alt="User"
+                                data-tooltip-id="user-tooltip"
+                                data-tooltip-content={user.displayName || 'User'}
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src = userIcon;
+                                }}
+                            />
+                            <Tooltip id="user-tooltip" place="bottom" style={{ fontSize: '0.875rem', zIndex: 9999 }} />
+                        </>
+                    )}
                 </div>
             </div>
         </div>

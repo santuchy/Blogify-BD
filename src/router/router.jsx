@@ -7,6 +7,7 @@ import AuthLayout from './../layouts/AuthLayout';
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
+import AddBlog from "../pages/AddBlog";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-      }
+      },
+      {
+        path: '/addblog',
+        Component: AddBlog,
+      },
     ]
   },
   {
@@ -31,7 +36,8 @@ const router = createBrowserRouter([
       {
         path: '/auth/register',
         element: <Register></Register>,
-      }
+      },
+      
     ]
   }
 ]);
