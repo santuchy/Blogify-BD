@@ -29,13 +29,13 @@ const Banner = () => {
                         src={hero1}
                         animate={{ y: [0, -30, 0] }}
                         transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" , ease: "easeInOut" }}
-                        className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-br-[40px] border-s-4 border-b-4 md:border-s-8 md:border-b-8 border-black"
+                        className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-br-[40px] border-e-4 border-b-4 md:border-e-8 md:border-b-8 border-yellow-400"
                     />
                     <motion.img
                         src={hero2}
                         animate={{ y: [0, 30, 0] }}
                         transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut"}}
-                        className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-bl-[40px] border-s-4 border-b-4 md:border-s-8 md:border-b-8 border-black"
+                        className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-bl-[40px] border-s-4 border-b-4 md:border-s-8 md:border-b-8 border-yellow-400"
                     />
                 </div>
 
