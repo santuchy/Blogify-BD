@@ -9,7 +9,7 @@ const Newsletter = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) {
-      toast.error("Please enter your email and agree to the terms.");
+      toast.error("Please enter your email.");
       return;
     }
     toast.success("Thank you for subscribing to our newsletter!");
