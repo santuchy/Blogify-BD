@@ -2,21 +2,29 @@ import React from 'react';
 import { motion } from "motion/react";
 import hero1 from '../assets/Hero/Hero1.jpg';
 import hero2 from '../assets/Hero/Hero2.jpg';
+import { Cursor, useTypewriter,  } from 'react-simple-typewriter';
+
 
 const Banner = () => {
+
+    const [text] = useTypewriter({
+        words:['Explore. Learn. Evolve.', 'Stories That Spark Curiosity', 'Thoughts Worth Exploring'],
+        loop:{},
+        typeSpeed:80,
+        deleteSpeed: 50,
+    });
+
+    
+
+
     return (
         <div className="max-w-11/12 mx-auto py-2">
             <div className="hero min-h-[27rem] md:min-h-[32rem] flex flex-col-reverse lg:flex-row-reverse lg:gap-12 items-center">
                 
                 <div className="lg:w-1/2 text-center lg:text-left mt-6 lg:mt-0 pt-4">
-                    <motion.h1
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 2 }}
-                        className="text-3xl md:text-6xl font-bold"
-                    >
-                        Stories That Spark Curiosity
-                    </motion.h1>
+                    <div className="text-3xl md:text-6xl font-bold">
+                        {text}<span className="text-yellow-400"> <Cursor cursorStyle='|'/> </span>
+                    </div>
                     <p className="py-4 text-lg md:text-xl">
                         Tech, life, and ideas that matter. Fresh insights every week.
                     </p>
