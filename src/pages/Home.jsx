@@ -5,7 +5,10 @@ import RecentBlog from '../components/RecentBlog';
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            <div className=''>
+                <Banner></Banner>
+            </div>
+            
             <RecentBlog></RecentBlog>
         </div>
     );

@@ -4,9 +4,10 @@ const Footer = () => {
     return (
         <div>
             <footer className="footer rounded-t-[100px]
- max-w-11/12 mx-auto sm:footer-horizontal  bg-base-300 text-base-content p-10">
+ max-w-11/12 mx-auto sm:footer-horizontal bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300
+  p-10">
                 <div className='grid '>
-                    <img className='w-[150px]' src="https://i.ibb.co/B5Q3F9Yg/1749130994782.png" alt="" />
+                    <img className='w-[150px]' src="https://i.ibb.co/6c5VZRqD/1749283739384.png" alt="" />
                     <p className='text-xl font-semibold'>Where Ideas Take Flight</p>
                     
                     </div>

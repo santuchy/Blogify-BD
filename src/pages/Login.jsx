@@ -58,7 +58,7 @@ const Login = () => {
 
 
   return (
-    <div className='flex justify-center p-5 items-center bg-gradient-to-b from-yellow-500 to-white'>
+    <div className='flex justify-center p-5 items-center min-h-[27rem] md:min-h-[42rem] text-black'>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
         <h2 className='font-semibold text-2xl text-center'>Login your account</h2>
 

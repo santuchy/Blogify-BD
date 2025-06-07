@@ -8,12 +8,12 @@ const Banner = () => {
         <div className="max-w-11/12 mx-auto py-2">
             <div className="hero min-h-[27rem] md:min-h-[32rem] flex flex-col-reverse lg:flex-row-reverse lg:gap-12 items-center">
                 
-                <div className="lg:w-1/2 text-center lg:text-left mt-6 lg:mt-0">
+                <div className="lg:w-1/2 text-center lg:text-left mt-6 lg:mt-0 pt-4">
                     <motion.h1
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 2 }}
-                        className="text-3xl md:text-5xl font-bold"
+                        className="text-3xl md:text-6xl font-bold"
                     >
                         Stories That Spark Curiosity
                     </motion.h1>
@@ -28,14 +28,14 @@ const Banner = () => {
                     <motion.img
                         src={hero1}
                         animate={{ y: [0, -30, 0] }}
-                        transition={{ duration: 4, repeat: Infinity }}
+                        transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" , ease: "easeInOut" }}
                         className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-br-[40px] border-s-4 border-b-4 md:border-s-8 md:border-b-8 border-black"
                     />
                     <motion.img
                         src={hero2}
-                        animate={{ x: [0, -60, 0] }}
-                        transition={{ duration: 4, repeat: Infinity }}
-                        className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-br-[40px] border-s-4 border-b-4 md:border-s-8 md:border-b-8 border-black"
+                        animate={{ y: [0, 30, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut"}}
+                        className="w-50 h-45 md:w-100 md:h-70 shadow-2xl rounded-t-[40px] rounded-bl-[40px] border-s-4 border-b-4 md:border-s-8 md:border-b-8 border-black"
                     />
                 </div>
 

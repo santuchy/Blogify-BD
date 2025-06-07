@@ -23,12 +23,7 @@ const router = createBrowserRouter([
         path: '/addblog',
         Component: AddBlog,
       },
-    ]
-  },
-  {
-    path: '/auth',
-    element: <AuthLayout></AuthLayout>,
-    children: [
+    
       {
         path: '/auth/login',
         element: <Login></Login>,
@@ -37,9 +32,7 @@ const router = createBrowserRouter([
         path: '/auth/register',
         element: <Register></Register>,
       },
-      
     ]
-  }
-]);
+  }]);
 
 export default router;
