@@ -4,15 +4,18 @@ import { Outlet } from 'react-router';
 import Footer from '../components/Footer';
 import bgImg from '../assets/Hero/dark-mosaic.png'
 import ScrollProgress from '../components/ScrollProgress.jsx';
+import ScrollToTop from '../components/ScrollToTop.jsx';
+import CustomCursor from '../components/CustomCursor.jsx';
 
 const MainLayout = () => {
     return (
-        <div style={{ backgroundImage: `url(${bgImg})` }} className='min-h-screen bg-repeat bg-black text-white'>
-            
+        <div style={{ backgroundImage: `url(${bgImg})` }} className='min-h-screen bg-repeat bg-black text-white cursor-none'>
+            <CustomCursor></CustomCursor>
             <Navbar></Navbar>
             <ScrollProgress></ScrollProgress>
             <Outlet></Outlet>
             <Footer></Footer>
+            <ScrollToTop></ScrollToTop>
         </div>
     );
 };

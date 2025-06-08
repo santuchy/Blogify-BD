@@ -8,21 +8,21 @@ const authors = [
         name: "Alex Johnson",
         role: "Travel Blogger",
         message:
-            "Blogify helped me reach a wider audience with zero hassle. Super intuitive!",
+            "As a travel blogger, finding a platform that truly understands sharing travel stories is often tough. Blogify has been a game-changer. Its intuitive interface makes uploading stunning photos and crafting engaging narratives a breeze. The community engagement I've seen here is phenomenal. Blogify isn't just a site; it's a launchpad for adventure and inspiration, truly!",
         image: "https://i.ibb.co/BHLMhMNd/2735.jpg",
     },
     {
         name: "Sarah Kim",
         role: "Food Writer",
         message:
-            "Thanks to Blogify, I’ve been able to share my food journey with thousands!",
+            "Sharing my culinary explorations and best recipes is a true joy, and Blogify has elevated that experience significantly. For a food writer like me, visual presentation is paramount, and Blogify's layout makes my food photography pop beautifully. I appreciate how easy it is to format recipes and connect with readers who share my passion. Blogify is truly a creative kitchen hub!",
         image: "https://i.ibb.co/PGpfL6cB/2148780802.jpg",
     },
     {
         name: "David Lee",
         role: "Tech Enthusiast",
         message:
-            "I love how smooth and professional Blogify makes my posts look.",
+            "When it comes to breaking down complex topics within the world of gadgets and innovation, clarity and reach are key. Blogify provides an exceptional space for me as a tech enthusiast to share my insights. Their robust platform handles rich media seamlessly, I'm always impressed by thoughtful discussions my articles generate. If you love tech, Blogify is where your voice belongs!",
         image: "https://i.ibb.co/RTN80z0W/3900.jpg",
     },
 ];
