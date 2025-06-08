@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import AddBlog from "../pages/AddBlog";
+import FeaturedBlogs from "../pages/FeaturedBlogs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/auth/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/featured',
+        element: <FeaturedBlogs></FeaturedBlogs>,
       },
     ]
   }]);

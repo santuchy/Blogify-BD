@@ -53,8 +53,11 @@ const Navbar = () => {
                             <Link to={'/'}><button className='btn'>Home</button></Link>
 
                             <li><a>All Blog</a></li>
-                            <li><a>Featured Blogs</a></li>
+                            
+                            <Link to={'/featured'}><button className='btn'>Featured Blogs</button></Link>
+
                             <Link to={'/addblog'}><button className='btn'>Add Blogs</button></Link>
+
                             <li><a>Wishlist</a></li>
                         </ul>
                     </div>
@@ -64,7 +67,8 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <Link to={'/'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Home</button></Link>
                         <li><a>All Blog</a></li>
-                        <li><a>Featured Blogs</a></li>
+                        <Link to={'/featured'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Featured Blogs</button></Link>
+                        
                         <Link to={'/addblog'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Add Blogs</button></Link>
                         <li><a>Wishlist</a></li>
                     </ul>
