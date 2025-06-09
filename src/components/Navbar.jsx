@@ -52,7 +52,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <Link to={'/'}><button className='btn'>Home</button></Link>
 
-                            <li><a>All Blog</a></li>
+                            <Link to={'/allblogs'}><button className='btn'>All Blogs</button></Link>
                             
                             <Link to={'/featured'}><button className='btn'>Featured Blogs</button></Link>
 
@@ -66,7 +66,9 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <Link to={'/'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Home</button></Link>
-                        <li><a>All Blog</a></li>
+
+
+                         <Link to={'/allblogs'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>All Blogs</button></Link>
                         <Link to={'/featured'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Featured Blogs</button></Link>
                         
                         <Link to={'/addblog'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Add Blogs</button></Link>

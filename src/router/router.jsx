@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import AddBlog from "../pages/AddBlog";
 import FeaturedBlogs from "../pages/FeaturedBlogs";
+import AllBlogs from './../pages/AllBlogs';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/featured',
         element: <FeaturedBlogs></FeaturedBlogs>,
+      },
+      {
+        path: '/allblogs',
+        element: <AllBlogs></AllBlogs>,
       },
     ]
   }]);
