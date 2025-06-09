@@ -53,7 +53,7 @@ const AllBlogs = () => {
         <div className="p-4 max-w-11/12 mx-auto">
             <div className='text-center'>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">All Blogs</h2>
-                <p className='text-xl mb-5 font-semibold'>Your Gateway to Engaging Reads, All in One Place</p>
+                <p className='text-xl mb-5 font-semibold text-yellow-500'>Your Gateway to Engaging Reads, All in One Place</p>
             </div>
 
             <div className="flex gap-4 mb-4 justify-center">

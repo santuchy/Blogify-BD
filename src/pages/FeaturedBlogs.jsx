@@ -42,7 +42,7 @@ const FeaturedBlogs = () => {
         <div className="p-5 max-w-11/12 mx-auto ">
             <div className="text-center mb-4">
                 <h2 className="text-4xl lg:text-5xl font-bold ">📌Featured Blogs</h2>
-            <p className="text-xm lg:text-xl font-semibold p-3">Dive into Our Highly Recommended Articles</p>
+            <p className="text-md lg:text-xl font-semibold text-yellow-500 p-3">Dive into Our Highly Recommended Articles</p>
             </div>
             <div className="overflow-x-auto rounded-2xl">
                 <table className="min-w-full bg-black shadow border border-yellow-400 rounded">

@@ -62,8 +62,12 @@ const AddBlog = () => {
 
     return (
         <div className="p-5 text-black">
-            <div className="max-w-2xl mx-auto p-4 bg-base-200 rounded-2xl shadow-xl">
-                <h1 className="text-4xl md:text-5xl text-center font-bold mb-4">Add New Blog</h1>
+            <div className="text-center text-white">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">Add New Blog</h1>
+                <p className="text-xl font-semibold text-yellow-500 mb-5">Start Your Blogging Journey From Here</p>
+            </div>
+            <div className="max-w-2xl mx-auto p-4 bg-black text-white rounded-2xl shadow-xl">
+                
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label className="block mb-1 font-semibold">Title</label>
@@ -85,6 +89,7 @@ const AddBlog = () => {
                             value={formData.imageUrl}
                             onChange={handleChange}
                             className="w-full border border-gray-400 p-2 rounded"
+                            required
                         />
                     </div>
 
@@ -94,7 +99,7 @@ const AddBlog = () => {
                             name="category"
                             value={formData.category}
                             onChange={handleChange}
-                            className="w-full border border-gray-400 p-2 rounded"
+                            className="w-full border bg-black border-gray-400 p-2 rounded"
                             required
                         >
                             <option value="" disabled>Select Category</option>
