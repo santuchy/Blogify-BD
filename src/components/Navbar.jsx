@@ -58,7 +58,8 @@ const Navbar = () => {
 
                             <Link to={'/addblog'}><button className='btn'>Add Blogs</button></Link>
 
-                            <li><a>Wishlist</a></li>
+                            <Link to={'/wishlist'}><button className='btn'>Wishlist</button></Link>
+
                         </ul>
                     </div>
 
@@ -72,13 +73,15 @@ const Navbar = () => {
                         <Link to={'/featured'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Featured Blogs</button></Link>
                         
                         <Link to={'/addblog'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Add Blogs</button></Link>
-                        <li><a>Wishlist</a></li>
+
+                        <Link to={'/wishlist'}><button className='focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900'>Wishlist</button></Link>
+                        
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {user ? (
-                        <button onClick={handleLogOut} type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Logout</button>
-                    ) : (
+                        <button onClick={handleLogOut} type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Logout</button>) : (
+                        
                         <>
                             <Link className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Login</button></Link>
                             <Link className='text-lg text-[#F8F4E1]' to='/auth/register'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Register</button></Link>

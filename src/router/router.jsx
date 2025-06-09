@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import AddBlog from "../pages/AddBlog";
 import FeaturedBlogs from "../pages/FeaturedBlogs";
 import AllBlogs from './../pages/AllBlogs';
+import Wishlist from "../pages/Wishlist";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: '/allblogs',
         element: <AllBlogs></AllBlogs>,
+      },
+      {
+        path: '/wishlist',
+        element: <Wishlist></Wishlist>,
       },
     ]
   }]);

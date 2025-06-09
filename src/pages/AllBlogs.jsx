@@ -8,6 +8,8 @@ const AllBlogs = () => {
     const [category, setCategory] = useState("All");
     const [search, setSearch] = useState("");
     const { user } = useContext(AuthContext);
+    const [disabledWishlistBtn, setDisabledWishlistBtn] = useState([]);
+
 
     useEffect(() => {
         const delayDebounce = setTimeout(() => {
@@ -39,9 +41,11 @@ const AllBlogs = () => {
                 userEmail: user?.email,
             });
             alert("Added to wishlist!");
+            setDisabledWishlistBtn(prev => [...prev, blogId]);
         } catch (error) {
             console.error(error);
             alert("Already in wishlist or error");
+            setDisabledWishlistBtn(prev => [...prev, blogId]);
         }
     };
 
@@ -87,7 +91,7 @@ const AllBlogs = () => {
 
                         <div className="card-body">
                             <div className="card-actions justify-start">
-                                <div className="badge badge-outline bg-black text-blue-400 font-semibold">{blog.category}</div>
+                                <div className="badge badge-outline bg-black font-semibold">{blog.category}</div>
                                 <h2 className="card-title text-xl lg:text-2xl">
                                     {blog.title}
 
@@ -105,8 +109,18 @@ const AllBlogs = () => {
 
                                 </Link>
 
-                                <button onClick={() => handleWishlist(blog._id)} className="text-yellow-400 hover:text-black border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-black dark:hover:bg-yellow-400 dark:focus:ring-yellow-900 group relative inline-flex h-10 items-center justify-center overflow-hidden   transition hover:scale-110"><span>Add Wishlist</span><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
-                                
+                                <button
+                                    onClick={() => handleWishlist(blog._id)}
+                                    disabled={disabledWishlistBtn.includes(blog._id)}
+                                    className={`text-yellow-400 hover:text-black border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-black dark:hover:bg-yellow-400 dark:focus:ring-yellow-900 group relative inline-flex h-10 items-center justify-center overflow-hidden transition hover:scale-110 ${disabledWishlistBtn.includes(blog._id) ? 'opacity-50 cursor-not-allowed' : ''
+                                        }`}
+                                >
+                                    <span>Add Wishlist</span>
+                                    <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+                                        <div className="relative h-full w-8 bg-white/20"></div>
+                                    </div>
+                                </button>
+
                             </div>
                         </div>
                     </div>
