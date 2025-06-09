@@ -1,18 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
+import { AuthContext } from '../context/AuthProvider';
+import axios from 'axios';
 
 
 
 const RecentBlog = () => {
     const [blogs, setBlogs] = useState([]);
+    const { user } = useContext(AuthContext);
+    const [disabledWishlistBtn, setDisabledWishlistBtn] = useState([]);
+
 
     useEffect(() => {
-        fetch('http://localhost:3000/blogs/recent')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
+        axios.get('http://localhost:3000/blogs/recent')
+            .then(res => setBlogs(res.data))
             .catch(err => console.error('Failed to fetch recent blogs:', err));
     }, []);
+
+    const handleWishlist = async (blogId) => {
+        try {
+            await axios.post("http://localhost:3000/wishlist", {
+                blogId,
+                userEmail: user?.email,
+            });
+            alert("Added to wishlist!");
+            setDisabledWishlistBtn(prev => [...prev, blogId]);
+        } catch (error) {
+            console.error(error);
+            alert("Already in wishlist or error");
+            setDisabledWishlistBtn(prev => [...prev, blogId]);
+        }
+    };
 
     return (
         <div className='max-w-11/12 mx-auto pb-5'>
@@ -40,9 +59,17 @@ const RecentBlog = () => {
                                     <Link>
                                         <button className="text-yellow-400 hover:text-black border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-black dark:hover:bg-yellow-400 dark:focus:ring-yellow-900 group relative inline-flex h-10 items-center justify-center overflow-hidden   transition hover:scale-110"><span>View Details</span><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
                                     </Link>
-                                    <Link>
-                                        <button className="text-yellow-400 hover:text-black border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-black dark:hover:bg-yellow-400 dark:focus:ring-yellow-900 group relative inline-flex h-10 items-center justify-center overflow-hidden   transition hover:scale-110"><span>Add Wishlist</span><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
-                                    </Link>
+                                    <button
+                                        onClick={() => handleWishlist(blog._id)}
+                                        disabled={disabledWishlistBtn.includes(blog._id)}
+                                        className={`text-yellow-400 hover:text-black border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-black dark:hover:bg-yellow-400 dark:focus:ring-yellow-900 group relative inline-flex h-10 items-center justify-center overflow-hidden transition hover:scale-110 ${disabledWishlistBtn.includes(blog._id) ? 'opacity-50 cursor-not-allowed' : ''
+                                            }`}
+                                    >
+                                        <span>Add Wishlist</span>
+                                        <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+                                            <div className="relative h-full w-8 bg-white/20"></div>
+                                        </div>
+                                    </button>
                                 </div>
 
                             </div>

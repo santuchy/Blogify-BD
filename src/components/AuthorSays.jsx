@@ -1,6 +1,6 @@
-import { AnimatePresence } from 'motion/react';
 import React from 'react';
 import { useEffect, useState } from "react";
+import { AnimatePresence } from 'motion/react';
 import { motion } from 'motion/react';
 
 const authors = [
@@ -41,11 +41,10 @@ const AuthorSays = () => {
     const current = authors[currentIndex];
 
     return (
-        <div className='md:mb-10 lg:mb-10 '>
+        <div className='md:mb-10 lg:mb-10 max-w-11/12 mx-auto'>
             <div className="flex flex-col md:flex-row  text-white">
 
-                {/* left */}
-                <div className="md:w-1/2 bg-black text-white flex flex-col justify-center items-start px-10 py-20 overflow-hidden border-2 border-yellow-400">
+                <div className="md:w-1/2 bg-black text-white flex flex-col justify-center items-start px-10 py-15 overflow-hidden border-2 border-yellow-400 rounded-2xl">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
@@ -53,7 +52,7 @@ const AuthorSays = () => {
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: "-100%", opacity: 0 }}
                             transition={{ duration: 0.8 }}
-                            className=" max-w-11/12 mx-auto"
+                            className=" max-w-11/12 mx-auto "
                         >
                             <div className="mb-6"><img src="https://i.ibb.co/8LSDQjBF/icons8-quote-left-64.png" alt="" /></div>
                             <p className="text-xl md:text-2xl leading-relaxed">{current.message}</p>
@@ -71,7 +70,7 @@ const AuthorSays = () => {
                         </motion.div>
                     </AnimatePresence>
                 </div>
-                {/* right Side */}
+                
                 <div className="md:w-1/2 flex flex-col justify-center items-center px-10 py-20">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">
                         Join Over 16,000+ <br /> Blogify Readers
