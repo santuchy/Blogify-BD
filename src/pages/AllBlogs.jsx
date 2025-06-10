@@ -3,6 +3,9 @@ import { AuthContext } from '../context/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router';
 import Loading from './Loading';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const AllBlogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -11,7 +14,7 @@ const AllBlogs = () => {
     const { user } = useContext(AuthContext);
     const [disabledWishlistBtn, setDisabledWishlistBtn] = useState([]);
     const [loading, setLoading] = useState(true);
-    
+
 
 
     useEffect(() => {
@@ -23,7 +26,7 @@ const AllBlogs = () => {
     }, [search, category]);
 
     const fetchBlogs = async () => {
-         setLoading(true);
+        setLoading(true);
         try {
             const params = {};
             if (category !== "All") params.category = category;
@@ -36,12 +39,12 @@ const AllBlogs = () => {
         } catch (err) {
             console.error(err);
         } finally {
-            setLoading(false); 
+            setLoading(false);
         }
-        
+
     };
 
-     if (loading) {
+    if (loading) {
         return <Loading />;
     }
 
@@ -94,11 +97,17 @@ const AllBlogs = () => {
                 {blogs.map((blog) => (
 
                     <div key={blog._id} className="card bg-black shadow-sm">
-                        <figure>
-                            <img
-                                src={blog.imageUrl}
-                                alt="Shoes" />
-                        </figure>
+                        <PhotoProvider>
+                            <figure>
+                                <PhotoView src={blog.imageUrl}>
+                                    <img
+                                        src={blog.imageUrl}
+                                        alt="Shoes"
+                                        className="cursor-pointer"
+                                    />
+                                </PhotoView>
+                            </figure>
+                        </PhotoProvider>
 
                         <div className="card-body">
                             <div className="card-actions justify-start">
@@ -130,7 +139,7 @@ const AllBlogs = () => {
                                     <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
                                         <div className="relative h-full w-8 bg-white/20"></div>
                                     </div>
-                                </button> 
+                                </button>
 
                             </div>
                         </div>
