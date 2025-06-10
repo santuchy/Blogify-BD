@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router';
+import Loading from './Loading';
 
 const AllBlogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -9,6 +10,8 @@ const AllBlogs = () => {
     const [search, setSearch] = useState("");
     const { user } = useContext(AuthContext);
     const [disabledWishlistBtn, setDisabledWishlistBtn] = useState([]);
+    const [loading, setLoading] = useState(true);
+    
 
 
     useEffect(() => {
@@ -20,6 +23,7 @@ const AllBlogs = () => {
     }, [search, category]);
 
     const fetchBlogs = async () => {
+         setLoading(true);
         try {
             const params = {};
             if (category !== "All") params.category = category;
@@ -31,8 +35,15 @@ const AllBlogs = () => {
             setBlogs(res.data);
         } catch (err) {
             console.error(err);
+        } finally {
+            setLoading(false); 
         }
+        
     };
+
+     if (loading) {
+        return <Loading />;
+    }
 
     const handleWishlist = async (blogId) => {
         try {

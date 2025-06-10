@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loading from "./Loading";
 
 const FeaturedBlogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [sortConfig, setSortConfig] = useState({ key: "wordCount", direction: "desc" });
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         axios.get("http://localhost:3000/blogs").then((res) => {
             const sortedBlogs = res.data
                 .map((blog) => ({
@@ -15,8 +18,13 @@ const FeaturedBlogs = () => {
                 .sort((a, b) => b.wordCount - a.wordCount)
                 .slice(0, 10);
             setBlogs(sortedBlogs);
+            setLoading(false);
         });
     }, []);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     const handleSort = (key) => {
         let direction = "asc";

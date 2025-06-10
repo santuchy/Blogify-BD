@@ -12,11 +12,14 @@ import AllBlogs from './../pages/AllBlogs';
 import Wishlist from "../pages/Wishlist";
 import BlogDetails from "../pages/BlogDetails";
 import UpdateBlog from "../pages/UpdateBlog";
+import PrivateRoute from "../context/PrivateRoute";
+import Loading from "../pages/Loading";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
+    hydrateFallbackElement: <Loading></Loading>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -25,9 +28,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/addblog',
-        Component: AddBlog,
+        element: <PrivateRoute>
+           <AddBlog></AddBlog>
+        </PrivateRoute>,
       },
-    
       {
         path: '/auth/login',
         element: <Login></Login>,
@@ -38,6 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/featured',
+        hydrateFallbackElement: <Loading></Loading>,
         element: <FeaturedBlogs></FeaturedBlogs>,
       },
       {
@@ -46,7 +51,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/wishlist',
-        element: <Wishlist></Wishlist>,
+        element:<PrivateRoute>
+           <Wishlist></Wishlist>
+        </PrivateRoute>,
       },
       {
         path: '/blogdetails/:id',
@@ -54,7 +61,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateblog/:id',
-        element: <UpdateBlog></UpdateBlog>,
+        element: <PrivateRoute>
+           <UpdateBlog></UpdateBlog>
+        </PrivateRoute>,
       },
     ]
   }]);

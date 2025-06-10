@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { AuthContext } from '../context/AuthProvider';
 import axios from 'axios';
+import Loading from './Loading';
 
 const BlogDetails = () => {
 
@@ -41,7 +42,7 @@ const BlogDetails = () => {
         setCommentText('');
     };
 
-    if (!blog) return <p>Loading...</p>;
+    if (!blog) return <Loading></Loading>;
 
     const isOwner = user?.email === blog?.email;
 

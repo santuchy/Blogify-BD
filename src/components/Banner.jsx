@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import hero1 from '../assets/Hero/Hero1.jpg';
 import hero2 from '../assets/Hero/Hero2.jpg';
 import { Cursor, useTypewriter,  } from 'react-simple-typewriter';
+import { Link } from 'react-router';
 
 
 const Banner = () => {
@@ -13,8 +14,6 @@ const Banner = () => {
         typeSpeed:80,
         deleteSpeed: 50,
     });
-
-    
 
 
     return (
@@ -28,7 +27,9 @@ const Banner = () => {
                     <p className="py-4 text-lg md:text-xl">
                         Tech, life, and ideas that matter. Fresh insights every week.
                     </p>
-                    <div className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Get Started</button></div>
+                    <Link to={'/addblog'}>
+                    <div className='text-lg text-[#F8F4E1]' to='/auth/login'><button type="button" className="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:focus:ring-yellow-900">Get Started</button></div></Link>
+                    
                 </div>
 
                 

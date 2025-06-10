@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { AuthContext } from '../context/AuthProvider';
 import axios from 'axios';
+import Loading from '../pages/Loading';
 
 
 
@@ -10,13 +11,25 @@ const RecentBlog = () => {
     const [blogs, setBlogs] = useState([]);
     const { user } = useContext(AuthContext);
     const [disabledWishlistBtn, setDisabledWishlistBtn] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
         axios.get('http://localhost:3000/blogs/recent')
-            .then(res => setBlogs(res.data))
-            .catch(err => console.error('Failed to fetch recent blogs:', err));
+            .then(res => {
+                setBlogs(res.data);
+            })
+            .catch(err => {
+                console.error('Failed to fetch recent blogs:', err);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, []);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     const handleWishlist = async (blogId) => {
         try {
@@ -56,7 +69,7 @@ const RecentBlog = () => {
                                 <p>{blog.shortDescription}</p>
                                 <div className="card-actions justify-end">
 
-                                    <Link>
+                                    <Link to={`/blogdetails/${blog._id}`}>
                                         <button className="text-yellow-400 hover:text-black border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-black dark:hover:bg-yellow-400 dark:focus:ring-yellow-900 group relative inline-flex h-10 items-center justify-center overflow-hidden   transition hover:scale-110"><span>View Details</span><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
                                     </Link>
                                     <button

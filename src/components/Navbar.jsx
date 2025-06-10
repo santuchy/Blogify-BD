@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
 
-    // sticky navbar
+
     const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
