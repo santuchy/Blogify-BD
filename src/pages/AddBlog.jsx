@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthProvider";
+import axios from "axios";
 
 const AddBlog = () => {
     const { user } = useContext(AuthContext);
@@ -32,15 +33,9 @@ const AddBlog = () => {
 
         console.log(blogData);
 
-        fetch("http://localhost:3000/blogs", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(blogData),
-        })
-            .then((res) => res.json())
-            .then((data) => {
+        axios.post("http://localhost:3000/blogs", blogData)
+            .then((response) => {
+                const data = response.data;
                 if (data.insertedId || data.acknowledged) {
                     Swal.fire({
                         title: "Blog Added Successfully",
@@ -55,10 +50,6 @@ const AddBlog = () => {
                         longDescription: "",
                     });
                 }
-            })
-            .catch((err) => {
-                console.error("Error:", err);
-                Swal.fire("Something went wrong", err.message, "error");
             });
     };
 
