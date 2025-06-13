@@ -2,13 +2,13 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
             <footer className="footer rounded-t-[100px]
  max-w-11/12 mx-auto sm:footer-horizontal bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 text-gray-300
   p-10">
-                <div className='grid '>
-                    <img className='w-[150px]' src="https://i.ibb.co/6c5VZRqD/1749283739384.png" alt="" />
+                <div className='grid'>
+                    <img className='w-[150px] ' src="https://i.ibb.co/6c5VZRqD/1749283739384.png" alt="" />
                     <p className='text-xl font-semibold'>Where Ideas Take Flight</p>
+                    <h6 className='font-semibold'>Blogify connects readers and writers through <br /> diverse content from tech to travel and beyond.</h6>
                     
                     </div>
                
@@ -74,7 +74,7 @@ const Footer = () => {
 
                 </nav>
             </footer>
-        </div>
+        
     );
 };
 

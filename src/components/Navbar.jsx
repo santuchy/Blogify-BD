@@ -8,6 +8,7 @@ const Navbar = () => {
 
 
     const [isSticky, setIsSticky] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,6 +30,10 @@ const Navbar = () => {
             console.log(error);
         });
     };
+
+    const handleDropdownLinkClick = () => {
+        setIsDropdownOpen(false);
+    };
     return (
         <div className={`sticky top-0 z-50 transition-colors duration-300 ${isSticky ? 'bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900' : 'bg-transparent'
             }`}>
@@ -38,7 +43,8 @@ const Navbar = () => {
                     <div className="dropdown ">
 
                         <div className='flex items-center'>
-                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
 
                             </div>
@@ -49,16 +55,16 @@ const Navbar = () => {
 
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <Link to={'/'}><button className='btn'>Home</button></Link>
+                            className="menu menu-sm dropdown-content text-white rounded-box z-1 mt-3 w-52 p-2 shadow gap-5 bg-black">
+                            <Link to={'/'} onClick={handleDropdownLinkClick}><button className='btn bg-yellow-400 hover:bg-yellow-500 focus:ring-2 focus:ring-yellow-300'>Home</button></Link>
 
-                            <Link to={'/allblogs'}><button className='btn'>All Blogs</button></Link>
+                            <Link to={'/allblogs'} onClick={handleDropdownLinkClick}><button className='btn bg-yellow-400 hover:bg-yellow-500 focus:ring-2 focus:ring-yellow-300'>All Blogs</button></Link>
                             
-                            <Link to={'/featured'}><button className='btn'>Featured Blogs</button></Link>
+                            <Link to={'/featured'} onClick={handleDropdownLinkClick}><button className='btn bg-yellow-400 hover:bg-yellow-500 focus:ring-2 focus:ring-yellow-300'>Featured Blogs</button></Link>
 
-                            <Link to={'/addblog'}><button className='btn'>Add Blogs</button></Link>
+                            <Link to={'/addblog'} onClick={handleDropdownLinkClick}><button className='btn bg-yellow-400 hover:bg-yellow-500 focus:ring-2 focus:ring-yellow-300'>Add Blogs</button></Link>
 
-                            <Link to={'/wishlist'}><button className='btn'>Wishlist</button></Link>
+                            <Link to={'/wishlist'} onClick={handleDropdownLinkClick}><button className='btn bg-yellow-400 hover:bg-yellow-500 focus:ring-2 focus:ring-yellow-300'>Wishlist</button></Link>
 
                         </ul>
                     </div>

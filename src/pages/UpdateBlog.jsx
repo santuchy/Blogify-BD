@@ -52,6 +52,10 @@ const UpdateBlog = () => {
         axios.put(`http://localhost:3000/blogs/${id}`, {
             ...formData,
             email: user.email,
+        }, {
+            headers: {
+                Authorization: `Bearer ${user.accessToken}`
+            }
         })
             .then(res => {
                 Swal.fire('Updated!', 'Blog updated successfully.', 'success');

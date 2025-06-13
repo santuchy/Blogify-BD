@@ -33,7 +33,11 @@ const AddBlog = () => {
 
         console.log(blogData);
 
-        axios.post("http://localhost:3000/blogs", blogData)
+        axios.post("http://localhost:3000/blogs", blogData, {
+            headers: {
+                Authorization: `Bearer ${user.accessToken}`
+            }
+        })
             .then((response) => {
                 const data = response.data;
                 if (data.insertedId || data.acknowledged) {

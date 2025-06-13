@@ -7,6 +7,8 @@ import Login from './Login';
 const Wishlist = () => {
 
     const { user } = useContext(AuthContext);
+    
+    
     const userEmail = user?.email;
 
     const [wishlistBlogs, setWishlistBlogs] = useState([]);
@@ -16,7 +18,11 @@ const Wishlist = () => {
     const fetchWishlist = () => {
         if (!userEmail) return;
         setLoading(true);
-        axios.get(`http://localhost:3000/wishlist?userEmail=${encodeURIComponent(userEmail)}`)
+        axios.get(`http://localhost:3000/wishlist?userEmail=${encodeURIComponent(userEmail)}`, {
+            headers: {
+                Authorization: `Bearer ${user.accessToken}`
+            }
+        })
             .then(res => {
                 setWishlistBlogs(res.data);
                 setLoading(false);

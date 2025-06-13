@@ -2,19 +2,23 @@ import React from 'react';
 import { Link, useRouteError } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import bgImg from '../assets/Hero/dark-mosaic.png'
+import ScrollProgress from '../components/ScrollProgress';
+import ScrollToTop from './../components/ScrollToTop';
 
 const ErrorPage = () => {
     const error = useRouteError()
   console.log(error?.error?.message)
     return (
-        <>
-        <Navbar />
-        <div className='text-center pb-10 bg-white max-w-11/12 mx-auto'>
-            <img className='mx-auto h-[500px] w-1100px]' src="https://i.ibb.co/rKWkd0fx/404-error-with-people-holding-numbers-concept-illustration.png" alt="" />
+        <div style={{ backgroundImage: `url(${bgImg})` }} className='min-h-screen bg-repeat bg-black text-white  '>
+          <Navbar />
+          <ScrollProgress></ScrollProgress>
+        <div className='text-center pb-10 max-w-11/12 mx-auto'>
+            <img className='mx-auto lg:h-[500px]' src="https://i.ibb.co/rKWkd0fx/404-error-with-people-holding-numbers-concept-illustration.png" alt="" />
           <h1 className='mb-8 text-7xl font-semibold text-yellow-400'>
             {error?.status || 404}
           </h1>
-          <p className='mb-3 text-xl font-bold text-gray-900 md:text-2xl'>
+          <p className='mb-3 text-xl font-bold text-white md:text-2xl'>
             {error?.error?.message || 'Something Went Wrong!'}
           </p>
           <Link to='/'>
@@ -22,7 +26,9 @@ const ErrorPage = () => {
         </Link>
         </div>
         <Footer/>
-      </>
+        <ScrollToTop></ScrollToTop>
+        </div>
+      
     );
 };
 

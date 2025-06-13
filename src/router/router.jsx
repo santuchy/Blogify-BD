@@ -19,7 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
-    hydrateFallbackElement: <Loading></Loading>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -42,7 +41,6 @@ const router = createBrowserRouter([
       },
       {
         path: '/featured',
-        hydrateFallbackElement: <Loading></Loading>,
         element: <FeaturedBlogs></FeaturedBlogs>,
       },
       {

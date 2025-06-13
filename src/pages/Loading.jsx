@@ -1,9 +1,19 @@
 import React from 'react';
+import './Loading.css'
 
 const Loading = () => {
     return (
         <div className='min-h-screen flex justify-center items-center'>
-            <span className="loading loading-bars loading-xl"></span>
+              <div className="loadingio-spinner-gear-nq4q5u6dq7r">
+      <div className="ldio-x2uulkbinbj">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div className="center-hole"></div>
+        </div>
+      </div>
+    </div>
         </div>
     );
 };
