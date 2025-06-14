@@ -12,11 +12,11 @@ const Login = () => {
   const { signIn, googleSignIn, setUser } = use(AuthContext);
 
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const navigate = useNavigate();
 
   const handleGoogleSignIn = () => {
-    console.log('Google Clicked');
+    // console.log('Google Clicked');
     googleSignIn().then(result => {
       const user = result.user;
       setUser(user);

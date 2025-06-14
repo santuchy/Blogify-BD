@@ -31,9 +31,9 @@ const AddBlog = () => {
             email: user?.email,
         };
 
-        console.log(blogData);
+        // console.log(blogData);
 
-        axios.post("http://localhost:3000/blogs", blogData, {
+        axios.post("https://blogify-server-neon.vercel.app/blogs", blogData, {
             headers: {
                 Authorization: `Bearer ${user.accessToken}`
             }

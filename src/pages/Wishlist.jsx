@@ -18,7 +18,7 @@ const Wishlist = () => {
     const fetchWishlist = () => {
         if (!userEmail) return;
         setLoading(true);
-        axios.get(`http://localhost:3000/wishlist?userEmail=${encodeURIComponent(userEmail)}`, {
+        axios.get(`https://blogify-server-neon.vercel.app/wishlist?userEmail=${encodeURIComponent(userEmail)}`, {
             headers: {
                 Authorization: `Bearer ${user.accessToken}`
             }
@@ -40,7 +40,7 @@ const Wishlist = () => {
     const handleRemove = (blogId) => {
         if (!window.confirm('Are you sure you want to remove this blog from your wishlist?')) return;
 
-        axios.delete('http://localhost:3000/wishlist', {
+        axios.delete('https://blogify-server-neon.vercel.app/wishlist', {
             data: { blogId, userEmail }
         }).then(() => {
             fetchWishlist();

@@ -15,7 +15,7 @@ const RecentBlog = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:3000/blogs/recent')
+        axios.get('https://blogify-server-neon.vercel.app/blogs/recent')
             .then(res => {
                 setBlogs(res.data);
             })
@@ -33,7 +33,7 @@ const RecentBlog = () => {
 
     const handleWishlist = async (blogId) => {
         try {
-            await axios.post("http://localhost:3000/wishlist", {
+            await axios.post("https://blogify-server-neon.vercel.app/wishlist", {
                 blogId,
                 userEmail: user?.email,
             });

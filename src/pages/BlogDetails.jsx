@@ -14,9 +14,9 @@ const BlogDetails = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/blogs/${id}`).then(res => setBlog(res.data));
+        axios.get(`https://blogify-server-neon.vercel.app/blogs/${id}`).then(res => setBlog(res.data));
 
-        axios.get(`http://localhost:3000/comments?blogId=${id}`).then(res => {
+        axios.get(`https://blogify-server-neon.vercel.app/comments?blogId=${id}`).then(res => {
             if (Array.isArray(res.data)) {
                 setComments(res.data);
             } else {
@@ -36,8 +36,8 @@ const BlogDetails = () => {
             userPhoto: user.photoURL,
         };
 
-        await axios.post('http://localhost:3000/comments', commentData);
-        const res = await axios.get(`http://localhost:3000/comments?blogId=${id}`);
+        await axios.post('https://blogify-server-neon.vercel.app/comments', commentData);
+        const res = await axios.get(`https://blogify-server-neon.vercel.app/comments?blogId=${id}`);
         setComments(res.data);
         setCommentText('');
     };

@@ -20,7 +20,7 @@ const UpdateBlog = () => {
 
     
     useEffect(() => {
-        axios.get(`http://localhost:3000/blogs/${id}`)
+        axios.get(`https://blogify-server-neon.vercel.app/blogs/${id}`)
             .then(res => {
                 const data = res.data;
                 if (data.email !== user?.email) {
@@ -49,7 +49,7 @@ const UpdateBlog = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:3000/blogs/${id}`, {
+        axios.put(`https://blogify-server-neon.vercel.app/blogs/${id}`, {
             ...formData,
             email: user.email,
         }, {

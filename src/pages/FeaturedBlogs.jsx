@@ -9,7 +9,7 @@ const FeaturedBlogs = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get("http://localhost:3000/blogs").then((res) => {
+        axios.get("https://blogify-server-neon.vercel.app/blogs").then((res) => {
             const sortedBlogs = res.data
                 .map((blog) => ({
                     ...blog,

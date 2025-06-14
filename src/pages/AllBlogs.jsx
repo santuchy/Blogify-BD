@@ -32,7 +32,7 @@ const AllBlogs = () => {
             if (category !== "All") params.category = category;
             if (search) params.search = search;
 
-            const res = await axios.get("http://localhost:3000/blogs/filter", {
+            const res = await axios.get("https://blogify-server-neon.vercel.app/blogs/filter", {
                 params,
             });
             setBlogs(res.data);
@@ -50,7 +50,7 @@ const AllBlogs = () => {
 
     const handleWishlist = async (blogId) => {
         try {
-            await axios.post("http://localhost:3000/wishlist", {
+            await axios.post("https://blogify-server-neon.vercel.app/wishlist", {
                 blogId,
                 userEmail: user?.email,
             });
