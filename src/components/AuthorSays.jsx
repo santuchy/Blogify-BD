@@ -60,11 +60,10 @@ const AuthorSays = () => {
                             <div className="flex items-center mt-8">
                                 <img
                                     src={current.image}
-                                    alt={current.name}
                                     className="w-12 h-12 rounded-full mr-4"
                                 />
                                 <div>
-                                    <p className="font-semibold">{current.name}</p>
+                                    <p className="font-semibold text-yellow-400">{current.name}</p>
                                     <p className="text-sm text-white/80">{current.role}</p>
                                 </div>
                             </div>
@@ -74,7 +73,7 @@ const AuthorSays = () => {
                 
                 <div className="md:w-1/2 flex flex-col justify-center items-center px-10 py-20">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">
-                        Join Over 16,000+ <br /> Blogify Readers
+                        Join Over <span className='text-yellow-400'>16,000</span>+ <br /> Blogify Readers
                     </h2>
                     <p className="text-center mt-4 lg:text-2xl text-gray-600">
                         From beginners to experts, everyone trusts Blogify.

@@ -17,7 +17,7 @@ const StatsGrid = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: false, amount: 0.3 }}>
                     <h2 className='text-center text-5xl font-bold mb-5'>Why Bloggers Love Us</h2>
-                    <p className='text-center text-lg font-medium mb-10'>Discover the features that empower <br /> writers, connect communities, and bring ideas to life.</p>
+                    <p className='text-center text-lg font-medium mb-10 text-yellow-400'>Discover the features that empower <br /> writers, connect communities, and bring ideas to life.</p>
                 </motion.div>
 
                 <motion.div
