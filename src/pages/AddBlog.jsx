@@ -1,9 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthProvider";
 import axios from "axios";
 
 const AddBlog = () => {
+     useEffect(()=> {
+            document.title = "Add Blog | Blogify";
+        }, []);
     const { user } = useContext(AuthContext);
     const [formData, setFormData] = useState({
         title: "",

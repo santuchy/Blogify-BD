@@ -8,6 +8,9 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 
 const AllBlogs = () => {
+     useEffect(()=> {
+            document.title = "All Blogs | Blogify";
+        }, []);
     const [blogs, setBlogs] = useState([]);
     const [category, setCategory] = useState("All");
     const [search, setSearch] = useState("");

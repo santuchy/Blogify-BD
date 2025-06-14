@@ -7,6 +7,7 @@ import ScrollProgress from '../components/ScrollProgress';
 import ScrollToTop from './../components/ScrollToTop';
 
 const ErrorPage = () => {
+  
     const error = useRouteError()
   console.log(error?.error?.message)
     return (

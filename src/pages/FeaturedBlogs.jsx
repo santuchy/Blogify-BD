@@ -3,6 +3,9 @@ import axios from "axios";
 import Loading from "./Loading";
 
 const FeaturedBlogs = () => {
+     useEffect(()=> {
+            document.title = "Featured Blogs | Blogify";
+        }, []);
     const [blogs, setBlogs] = useState([]);
     const [sortConfig, setSortConfig] = useState({ key: "wordCount", direction: "desc" });
     const [loading, setLoading] = useState(true);

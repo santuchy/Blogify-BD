@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, useNavigate, } from 'react-router';
 
 import { toast } from 'react-toastify';
@@ -7,6 +7,9 @@ import { AuthContext } from './../context/AuthProvider';
 
 
 const Register = () => {
+     useEffect(()=> {
+            document.title = "Register | Blogify";
+        }, []);
     const { createUser, setUser } = use(AuthContext);
 
     const navigate = useNavigate();

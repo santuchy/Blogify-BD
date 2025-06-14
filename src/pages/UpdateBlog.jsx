@@ -5,6 +5,9 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const UpdateBlog = () => {
+   useEffect(()=> {
+          document.title = "Update Blog | Blogify";
+      }, []);
 
     const { id } = useParams();
     const navigate = useNavigate();

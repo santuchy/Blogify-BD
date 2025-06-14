@@ -1,4 +1,4 @@
-import React, { use, } from 'react';
+import React, { use, useEffect, } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 
 import { AuthContext } from './../context/AuthProvider';
@@ -8,6 +8,9 @@ import { toast } from 'react-toastify';
 
 
 const Login = () => {
+   useEffect(()=> {
+          document.title = "Login | Blogify";
+      }, []);
 
   const { signIn, googleSignIn, setUser } = use(AuthContext);
 

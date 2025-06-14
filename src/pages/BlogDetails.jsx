@@ -5,6 +5,9 @@ import axios from 'axios';
 import Loading from './Loading';
 
 const BlogDetails = () => {
+     useEffect(()=> {
+            document.title = "Blog Details | Blogify";
+        }, []);
 
     const { id } = useParams();
     const [blog, setBlog] = useState(null);

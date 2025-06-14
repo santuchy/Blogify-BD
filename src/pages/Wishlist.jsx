@@ -6,6 +6,10 @@ import Login from './Login';
 
 const Wishlist = () => {
 
+     useEffect(()=> {
+            document.title = "Wishlist | Blogify";
+        }, []);
+
     const { user } = useContext(AuthContext);
     
     
