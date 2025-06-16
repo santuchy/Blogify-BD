@@ -1,0 +1,31 @@
+.door-left,
+.door-right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.door-left {
+  left: 0;
+  animation-name: openLeft;
+}
+
+.door-right {
+  right: 0;
+  animation-name: openRight;
+}
+
+@keyframes openLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes openRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}

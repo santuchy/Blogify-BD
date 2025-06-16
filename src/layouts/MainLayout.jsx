@@ -6,11 +6,12 @@ import bgImg from '../assets/Hero/dark-mosaic.png'
 import ScrollProgress from '../components/ScrollProgress.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 import CustomCursor from '../components/CustomCursor.jsx';
+import EntryAnimation from '../pages/EntryAnimation/EntryAnimation.jsx';
 
 const MainLayout = () => {
     return (
         <div style={{ backgroundImage: `url(${bgImg})` }} className='min-h-screen bg-repeat bg-black text-white'>
-            
+            <EntryAnimation></EntryAnimation>
             <CustomCursor></CustomCursor>
             <Navbar></Navbar>
             <ScrollProgress></ScrollProgress>
