@@ -47,23 +47,40 @@ Blogify was created to provide a smooth and interactive experience for users to 
 
 ## 🛠️ Tech Stack
 
-| `@tailwindcss/vite` | Tailwind integration with Vite |
-| `tailwindcss` | Utility-first CSS framework |
-| `axios` | API calls to backend |
-| `firebase` | Authentication and user management |
-| `motion` | UI animation and effects |
-| `react` | Core React library |
-| `react-router` | Client-side routing |
-| `@tanstack/react-table` | Table and data structure handling |
-| `react-animated-cursor` | Adds a custom animated cursor |
-| `react-countup` | Count-up number animation |
-| `react-hot-toast` | Fast and lightweight toast notifications |
-| `react-icons` | Beautiful icon sets |
-| `react-intersection-observer` | Animation triggers on scroll |
-| `react-photo-view` | Lightbox-style image viewer |
-| `react-simple-typewriter` | Typing effect for headers |
-| `react-toastify` | Customizable toast system |
-| `react-tooltip` | Tooltip library |
-| `sweetalert2` | Stylish modal alerts and confirmations |
+@tailwindcss/vite – Tailwind integration with Vite
+
+tailwindcss – Utility-first CSS framework
+
+axios – API calls to backend
+
+firebase – Authentication and user management
+
+motion – UI animation and motion effects
+
+react / react-dom – Core React libraries
+
+react-router – Client-side routing for SPA
+
+@tanstack/react-table – Flexible table & data structure handling
+
+react-animated-cursor – Adds a custom animated cursor
+
+react-countup – Count-up number animation
+
+react-hot-toast – Lightweight toast notifications
+
+react-icons – Popular icon sets in React
+
+react-intersection-observer – Triggers animation on scroll
+
+react-photo-view – Lightbox-style image viewer
+
+react-simple-typewriter – Typing effect for headers
+
+react-toastify – Toast system with styling options
+
+react-tooltip – Easy-to-use tooltips
+
+sweetalert2 – Beautiful modal alerts & popups
 
 ---
