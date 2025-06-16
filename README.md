@@ -1,4 +1,4 @@
-✨ Blogify
+# 📝 Blogify
 
 A modern and responsive blog platform built with React and Tailwind CSS. Blogify features animations, authentication, categorized blog browsing, and a dynamic wishlist — all wrapped in a polished UI.
 
