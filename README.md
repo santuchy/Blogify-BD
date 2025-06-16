@@ -1,12 +1,69 @@
-# React + Vite
+✨ Blogify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive blog platform built with React and Tailwind CSS. Blogify features animations, authentication, categorized blog browsing, and a dynamic wishlist — all wrapped in a polished UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live URL
 
-## Expanding the ESLint configuration
+🔗 [https://blogify-bd.netlify.app/]
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Purpose
+
+Blogify was created to provide a smooth and interactive experience for users to explore, manage, and engage with blogs. It includes custom animations, first-visit onboarding effects, and tools for authenticated users to personalize their experience.
+
+---
+
+## 🚀 Key Features
+🖼️ First-Time Visit Animation – welcoming door-style screen that appears only once per device
+
+📰 All Blogs Page – browse all published blogs with search and filter options
+
+🌟 Featured Blogs Page – highlights the top or handpicked blog posts
+
+🧾 Newsletter Section – users can subscribe to receive blog updates and announcements
+
+🧑‍💬 Author Says Section – a dedicated area to showcase the author's thoughts or messages
+
+🔐 Firebase Authentication – secure login with Google Sign-In
+
+🔍 Search & Category Filtering – find blogs by title, keyword, or category
+
+📄 Blog Details Page – full blog content view with comments and zoomable images
+
+📝 Update Blogs – blog authors can edit their posts via pre-filled update form
+
+💖 Wishlist Functionality – users can save favorite blogs (tied to email/userId)
+
+🌈 UI Animations – animated cursor, scroll-triggered animations, count-up effects, and more
+
+📸 Image Preview – blog images open in a lightbox for a better viewing experience
+
+🔔 Toasts & Alerts – intuitive feedback using react-hot-toast, react-toastify, and sweetalert2
+
+---
+
+## 🛠️ Tech Stack
+
+| `@tailwindcss/vite` | Tailwind integration with Vite |
+| `tailwindcss` | Utility-first CSS framework |
+| `axios` | API calls to backend |
+| `firebase` | Authentication and user management |
+| `motion` | UI animation and effects |
+| `react` | Core React library |
+| `react-router` | Client-side routing |
+| `@tanstack/react-table` | Table and data structure handling |
+| `react-animated-cursor` | Adds a custom animated cursor |
+| `react-countup` | Count-up number animation |
+| `react-hot-toast` | Fast and lightweight toast notifications |
+| `react-icons` | Beautiful icon sets |
+| `react-intersection-observer` | Animation triggers on scroll |
+| `react-photo-view` | Lightbox-style image viewer |
+| `react-simple-typewriter` | Typing effect for headers |
+| `react-toastify` | Customizable toast system |
+| `react-tooltip` | Tooltip library |
+| `sweetalert2` | Stylish modal alerts and confirmations |
+
+---
