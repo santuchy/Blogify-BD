@@ -1,21 +1,19 @@
 import React from 'react';
-import './Loading.css'
+import Lottie from 'lottie-react';
+import loadingAnim from '../assets/Lottie/loading.json';
 
 const Loading = () => {
-    return (
-        <div className='min-h-screen flex justify-center items-center'>
-              <div className="loadingio-spinner-gear-nq4q5u6dq7r">
-      <div className="ldio-x2uulkbinbj">
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div className="center-hole"></div>
-        </div>
-      </div>
+  return (
+    <div className="min-h-screen flex justify-center items-center">
+      <Lottie
+        animationData={loadingAnim}
+        loop
+        autoplay
+        aria-label="Loading"
+        className="w-36 h-36 md:w-44 md:h-44"
+      />
     </div>
-        </div>
-    );
+  );
 };
 
 export default Loading;
