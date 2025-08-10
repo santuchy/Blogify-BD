@@ -59,7 +59,7 @@ const Register = () => {
       <div className="mx-auto w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 p-5">
         
         <div className="flex items-center justify-center">
-          <div className="w-full max-w-[520px]">
+          <div className="w-full max-w-[550px]">
             <Lottie
               animationData={registerAnim}
               loop
