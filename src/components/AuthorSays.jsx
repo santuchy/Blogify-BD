@@ -23,7 +23,7 @@ const authors = [
         name: "David Lee",
         role: "Tech Enthusiast",
         message:
-            "When it comes to breaking down complex topics within the world of gadgets and innovation, clarity and reach are key. Blogify provides an exceptional space for me as a tech enthusiast to share my insights. Their robust platform handles rich media seamlessly, I'm always impressed by thoughtful discussions my articles generate. If you love tech, Blogify is where your voice belongs!",
+            "When it comes to breaking down complex topics within the world of gadgets and innovation, clarity & reach are key. Blogify provides an exceptional space as a tech enthusiast to share my insights. Their robust platform handles rich media seamlessly, I'm always impressed by thoughtful discussions my articles generate. If you love tech, Blogify is where your voice belongs!",
         image: "https://i.ibb.co/RTN80z0W/3900.jpg",
     },
 ];
