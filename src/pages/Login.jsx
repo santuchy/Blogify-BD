@@ -1,4 +1,4 @@
-import React, { use, useEffect, } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 
 import { AuthContext } from './../context/AuthProvider';
@@ -6,68 +6,52 @@ import { toast } from 'react-toastify';
 import Lottie from 'lottie-react';
 import loginAnim from '../assets/Lottie/login animation.json';
 
-
-
-
-
 const Login = () => {
-   useEffect(()=> {
-          document.title = "Login | Blogify";
-      }, []);
+  useEffect(() => {
+    document.title = "Login | Blogify";
+  }, []);
 
-  const { signIn, googleSignIn, setUser } = use(AuthContext);
+  const { signIn, googleSignIn, setUser } = useContext(AuthContext);
 
   const location = useLocation();
-  // console.log(location);
   const navigate = useNavigate();
 
   const handleGoogleSignIn = () => {
-    // console.log('Google Clicked');
-    googleSignIn().then(result => {
-      const user = result.user;
-      setUser(user);
-      navigate(`${location.state ? location.state : '/'}`)
-    }).catch(error => {
-      alert(error);
-    })
-  }
-
-
-
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate(`${location.state ? location.state : '/'}`);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ email, password });
 
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         toast.success("Login successful!");
-        console.log(user);
-        navigate(`${location.state ? location.state : "/"}`)
-
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         const errorCode = error.code;
-        toast.error("Login failed, Try again... ");
-        // const errorMessage = error.message;
-        // alert(errorCode, errorMessage)
+        toast.error("Login failed, Try again...");
         console.log(errorCode);
-
-      })
-
-  }
-
-
+      });
+  };
 
   return (
     <div className="min-h-screen w-full flex items-center">
       <div className="mx-auto w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 p-5">
-      
-        <div className="order-1 md:order-none flex items-center justify-center">
+        
+        <div className="order-first md:order-none flex items-center justify-center">
           <div className="w-full max-w-[520px]">
             <Lottie
               animationData={loginAnim}
@@ -79,7 +63,8 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center">
+        
+        <div className="order-last md:order-none flex items-center justify-center">
           <div className="card bg-base-100 text-black w-full max-w-sm shrink-0 shadow-2xl py-5">
             <h2 className="font-semibold text-2xl text-center">Login your account</h2>
 
@@ -89,7 +74,7 @@ const Login = () => {
                 <input name="email" type="email" className="input" placeholder="Email" required />
 
                 <label className="label text-black">Password</label>
-                <input name="password" type="password" className="input " placeholder="Password" required />
+                <input name="password" type="password" className="input" placeholder="Password" required />
 
                 <div><a className="link link-hover">Forgot password?</a></div>
 
